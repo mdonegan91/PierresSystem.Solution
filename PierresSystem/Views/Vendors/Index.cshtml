@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@using PierresSystem.Models;
+
+<h1>Vendors</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No vendors have been added yet!</h3>
+} 
+else
+{
+  <form action="/vendors/search" method="get">
+    <label for="search">Search for Vendor:</label>
+    <input type="text" id="business" name="business">
+    <button type="submit">Find</button>
+  </form>
+}
+
+@foreach (Vendor vendor in Model)
+{
+  <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
+}
+
+<p><a href='/'>Back home</a></p>

@@ -9,7 +9,6 @@ namespace PierresSystem.Models
     public string VendorName { get; set; }
     public int Id { get; }
     private static List<Order> _instances = new List<Order> { };
-    // public List<Artist> Artists { get; set; }
     public Order(string orderName, string vendorName)
     {
       OrderName = orderName;
