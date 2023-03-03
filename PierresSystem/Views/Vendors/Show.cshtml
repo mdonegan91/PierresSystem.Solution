@@ -4,7 +4,7 @@
 
 @using PierresSystem.Models;
 
-<h3>Here are all the orders for this vendor:  @Model["vendor"].Name</h3>
+<h3>Here are all the orders for @Model["vendor"].Name</h3>
 
 <ol>
 @foreach (Order order in @Model["order"])
@@ -13,6 +13,6 @@
 }
 </ol>
 
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-<p><a href='/vendors'>Return to vendor list</a></p>
-<p><a href='/'>Return to Main Page</a></p>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add an order</a></p>
+<p><a href='/vendors'>Vendors</a></p>
+<p><a href='/'>Home</a></p>
