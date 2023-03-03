@@ -30,14 +30,14 @@ namespace PierresSystem.Tests
     }
 
     [TestMethod]
-    public void SetDescription_SetDescription_String()
+    public void SetOrderName_SetOrderName_String()
     {
-      string description = "croissant";
-      Order newOrder = new Order(description, "Prince Coffee", "Prince1", "five dollars", "march 2023");
-      string updatedDescription = "croissants";
-      newOrder.Description = updatedDescription;
-      string result = newOrder.Description;
-      Assert.AreEqual(updatedDescription, result);
+      string orderName = "Princ1";
+      Order newOrder = new Order("Prince Coffee", orderName, "croissants", "five dollars", "march 2023");
+      string updatedOrderName = "Prince1";
+      newOrder.OrderName = updatedOrderName;
+      string result = newOrder.OrderName;
+      Assert.AreEqual(updatedOrderName, result);
     }
 
     [TestMethod]
@@ -65,8 +65,8 @@ namespace PierresSystem.Tests
     [TestMethod]
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
-      string description = "croissants";
-      Order newOrder = new Order(description, "Prince Coffee", "Prince1", "five dollars", "march 2023");
+      string orderName = "Prince1";
+      Order newOrder = new Order(orderName, "Prince Coffee", "croissants", "five dollars", "march 2023");
       int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
@@ -74,10 +74,10 @@ namespace PierresSystem.Tests
     [TestMethod]
     public void Find_ReturnsCorrectOrder_Order()
     {
-      string description01 = "croissants";
-      string description02 = "scones";
-      Order newOrder1 = new Order(description01, "Prince Coffee", "Prince1", "five dollars", "march 2023");
-      Order newOrder2 = new Order(description02, "Cathedral Coffee", "Cathedral1", "four dollars", "february 2023");
+      string orderName01 = "Prince1";
+      string orderName02 = "Prince2";
+      Order newOrder1 = new Order(orderName01, "Prince Coffee", "croissants", "five dollars", "march 2023");
+      Order newOrder2 = new Order(orderName02, "Cathedral Coffee", "scones", "four dollars", "february 2023");
       Order result = Order.Find(2);
       Assert.AreEqual(newOrder2, result);
     }
