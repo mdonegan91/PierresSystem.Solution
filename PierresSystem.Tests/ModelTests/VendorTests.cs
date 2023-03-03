@@ -6,17 +6,18 @@ using System;
 namespace PierresSystem.Tests
 {
   [TestClass]
-  // public class VendorTests : IDisposable
-  // {
-  //   public void Dispose()
-  //   {
-  //     Vendor.ClearAll();
-  //   }
+  public class VendorTests //: IDisposable
+  {
+    // public void Dispose()
+    // {
+    //   Vendor.ClearAll();
+    // }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor newVendor = new Vendor("Prince Coffee");
+      Vendor newVendor = new Vendor();
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
   }
+}
