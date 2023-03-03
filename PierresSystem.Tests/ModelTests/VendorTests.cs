@@ -6,12 +6,12 @@ using System;
 namespace PierresSystem.Tests
 {
   [TestClass]
-  public class VendorTests //: IDisposable
+  public class VendorTests : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Vendor.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
 
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
@@ -27,6 +27,15 @@ namespace PierresSystem.Tests
       Vendor newVendor = new Vendor(name);
       string result = newVendor.Name;
       Assert.AreEqual(name, result);
+    }
+
+    [TestMethod]
+    public void GetID_ReturnsVendorID_Int()
+    {
+      string name = "Prince Coffee";
+      Vendor newVendor = new Vendor(name);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
     }
   }
 }
