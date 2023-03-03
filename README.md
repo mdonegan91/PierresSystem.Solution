@@ -12,23 +12,23 @@ A web application that allows Pierre to track the vendors that purchase baked go
 
 ## ☕ Setup Instructions ☕
 
-#### Command Line:
+#### 1. Command Line:
 ```sh
   $ cd Desktop
   $ git clone https://github.com/mdonegan91/PierresSystem.Solution
   $ cd PierresSystem.Solution
 ```
 
-#### Install [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+#### 2. Install [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
-#### Confirm all business logic tests pass with MSTest by running commands:
+#### 3. Confirm all business logic tests pass with MSTest by running commands:
 
 ```sh
 $ dotnet restore ./PierresSystem.Tests
 $ dotnet test ./PierresSystem.Tests
 ```
 
-#### To run the program in your browser use the following command:
+#### 4. To run the program in your browser use the following command:
 
 ```sh
 $ dotnet run ./PierresSystem
