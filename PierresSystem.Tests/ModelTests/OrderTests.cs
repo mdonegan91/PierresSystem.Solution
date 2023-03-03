@@ -74,5 +74,16 @@ namespace PierresSystem.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string description01 = "croissants";
+      string description02 = "scones";
+      Order newOrder1 = new Order(description01, "Prince Coffee", "Prince1", "five dollars", "march 2023");
+      Order newOrder2 = new Order(description02, "Cathedral Coffee", "Cathedral1", "four dollars", "february 2023");
+      Order result = Order.Find(2);
+      Assert.AreEqual(newOrder2, result);
+    }
   }
 }
