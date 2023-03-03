@@ -65,13 +65,9 @@ namespace PierresSystem.Tests
     [TestMethod]
     public void GetId_OrderInstantiateWithAnIdAndGetterReturns_Int()
     {
-      //Arrange
       string description = "croissants";
       Order newOrder = new Order(description, "Prince Coffee", "Prince1", "five dollars", "march 2023");
-      //Act
       int result = newOrder.Id;
-
-      //Assert
       Assert.AreEqual(1, result);
     }
 
