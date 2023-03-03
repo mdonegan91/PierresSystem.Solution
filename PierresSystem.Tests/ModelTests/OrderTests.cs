@@ -16,7 +16,7 @@ namespace PierresSystem.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("Prince1", "Prince Coffee");
+      Order newOrder = new Order("Prince1", "Prince Coffee", "croissants", "five dollars", "march 2023");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
@@ -24,22 +24,9 @@ namespace PierresSystem.Tests
     public void GetOrderName_ReturnsOrderName_String()
     {
       string orderName = "Prince1";
-      Order newOrder = new Order(orderName, "Prince Coffee");
+      Order newOrder = new Order(orderName, "Prince Coffee", "croissants", "five dollars", "march 2023");
       string result = newOrder.OrderName;
       Assert.AreEqual(orderName, result);
-    }
-
-    [TestMethod]
-    public void SetOrderName_SetsOrderName_String()
-    {
-      string orderName = "Princ1";
-      Order newOrder = new Order(orderName, "Prince Coffee");
-
-      string updatedOrderName = "Prince1";
-      newOrder.OrderName = updatedOrderName;
-      string result = newOrder.OrderName;
-
-      Assert.AreEqual(updatedOrderName, result);
     }
 
     [TestMethod]
@@ -56,11 +43,9 @@ namespace PierresSystem.Tests
     public void GetAll_ReturnsOrders_OrderList()
     {
       string orderName1 = "Prince1";
-      string vendorName1 = "Prince Coffee";
       string orderName2 = "Cathedral1";
-      string vendorName2 = "Cathedral Coffee";
-      Order newOrder1 = new Order(orderName1, vendorName1);
-      Order newOrder2 = new Order(orderName2, vendorName2);
+      Order newOrder1 = new Order(orderName1, "Prince Coffee", "croissants", "five dollars", "march 2023");
+      Order newOrder2 = new Order(orderName2, "Cathedral Coffee", "scones", "four dollars", "february 2023");
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);

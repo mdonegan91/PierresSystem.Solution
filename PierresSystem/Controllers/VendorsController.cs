@@ -43,7 +43,7 @@ namespace PierresSystem.Controllers
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order (orderName, foundVendor.Name);
+      Order newOrder = new Order (orderName, "Prince Coffee", "croissants", "five dollars", "march 2023");
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("vendor", foundVendor);
