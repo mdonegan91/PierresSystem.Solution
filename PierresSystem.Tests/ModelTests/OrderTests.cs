@@ -16,8 +16,17 @@ namespace PierresSystem.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order("Prince1", "Prince Coffee");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
+
+    [TestMethod]
+    public void GetOrderName_ReturnsOrderName_String()
+    {
+      string orderName = "Prince1";
+      Order newOrder = new Order(orderName, "Prince Coffee");
+      string result = newOrder.OrderName;
+      Assert.AreEqual(orderName, result);
     }
   }
 }
