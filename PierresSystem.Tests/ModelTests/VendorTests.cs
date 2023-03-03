@@ -61,17 +61,17 @@ namespace PierresSystem.Tests
       Assert.AreEqual(newVendor2, result);
     }
 
-    // [TestMethod]
-    // public void AddOrder_AssociatesOrderWithVendor_OrderList()
-    // {
-    //   string desciprtion = "Croissants";
-    //   Order newOrder = new Order(desciprtion, "Prince Coffee");
-    //   List<Order> newList = new List<Order> { newOrder };
-    //   string vendor = "Prince Coffee";
-    //   Vendor newVendor = new Vendor(vendor);
-    //   newVendor.AddOrder(newOrder);
-    //   List<Order> result = newVendor.Orders;
-    //   CollectionAssert.AreEqual(newList, result);
-    // }
+    [TestMethod]
+    public void AddOrder_AssociatesOrderWithVendor_OrderList()
+    {
+      string desciprtion = "Croissants";
+      Order newOrder = new Order(desciprtion, "Prince Coffee", "croissants", "five dollars,", "today");
+      List<Order> newList = new List<Order> { newOrder };
+      string vendor = "Prince Coffee";
+      Vendor newVendor = new Vendor(vendor);
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.Orders;
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
