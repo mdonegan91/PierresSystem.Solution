@@ -6,12 +6,12 @@ using System;
 namespace PierresSystem.Tests
 {
   [TestClass]
-  public class OrderTests //: IDisposable
+  public class OrderTests : IDisposable
   {
-    // public void Dispose()
-    // {
-    //   Order.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
 
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
@@ -43,13 +43,27 @@ namespace PierresSystem.Tests
     }
 
     [TestMethod]
-    public void GetVendorName_ReturnsVendorName_String()
+    public void GetAll_ReturnsEmptyList_ItemList()
     {
-      string vendorName = "Prince Coffee";
-      Order newOrder = new Order("Prince1", vendorName);
-      string result = newOrder.VendorName;
+      List<Order> newOrder = new List<Order> { };
 
-      Assert.AreEqual(vendorName, result);
+      List<Order> result = Order.GetAll();
+
+      CollectionAssert.AreEqual(newOrder, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string orderName1 = "Prince1";
+      string vendorName1 = "Prince Coffee";
+      string orderName2 = "Cathedral1";
+      string vendorName2 = "Cathedral Coffee";
+      Order newOrder1 = new Order(orderName1, vendorName1);
+      Order newOrder2 = new Order(orderName2, vendorName2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
