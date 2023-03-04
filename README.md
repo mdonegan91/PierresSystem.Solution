@@ -28,7 +28,7 @@ A web application that allows Pierre to track the vendors that purchase baked go
 
 ```sh
 $ dotnet restore ./PierresSystem.Tests
-$ dotnet test ./PierresSystem.Tests 
+$ dotnet test ./PierresSystem.Tests
 ```
 
 #### 4. To run the program in your browser use the following command:
