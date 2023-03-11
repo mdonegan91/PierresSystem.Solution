@@ -39,11 +39,11 @@ namespace PierresSystem.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderName)
+    public ActionResult Create(int vendorId, string orderName, string description, string price, string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order (orderName, "Prince Coffee", "croissants", "five dollars", "march 2023");
+      Order newOrder = new Order (orderName, "Prince Coffee", description, price, date);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("vendor", foundVendor);

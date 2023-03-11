@@ -6,6 +6,7 @@
 
 * C# 
 * .NET 6.0 
+* MsTest
 
 ## 🥐 Description 🥐
 A web application that allows Pierre to track the vendors that purchase baked goods from him and the orders belonging to those vendors.
